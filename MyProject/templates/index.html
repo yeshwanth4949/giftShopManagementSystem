@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+<style>
+	a:hover{
+		color: red;
+	}
+	a{
+		text-decoration: none;
+		font-size: 25px;
+	}
+</style>
+</head>
+<body bgcolor="lightblue">
+	
+	<h1 align=center bgolor='red'>Gift Shop Management System</h1>
+	<center>
+{%  block block1 %}
+&nbsp;&nbsp;&nbsp;<a href="{{url_for('index')}}">Home</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('about')}}">About</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('stockmanager')}}">StockManager</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('shopowner')}}">ShopOwner</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('customer')}}">Customer</a>&nbsp;&nbsp;&nbsp;
+	<hr>
+{%  endblock %}
+</center>
+{% block block2 %}
+{%  endblock %}
+</body>
+</html>

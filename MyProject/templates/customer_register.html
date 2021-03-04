@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer Registration</title>
+<style type="text/css">
+	a{
+		text-decoration: none;
+	}
+	h2
+	{
+		color: red;
+	}
+
+
+</style>
+</head>
+<body bgcolor='cyan'>
+	<center>
+	
+{% extends 'index.html' %}
+</center>
+{% block block2 %}
+
+	
+<form name="f" method="post" action="insert.jsp">
+	<center><h2 >Customer Registration</h2></center>
+<table align="center" width=400 height=300>
+<td>Enter Full Name</td>
+<td><input type="text" name="name" placeholder="Enter Full Name" required></td>
+</tr>
+<tr>
+<td>Select Gender</td>
+<td><input type="radio" name="gender" value="male" placeholder="male" required>Male&nbsp;&nbsp;<input type="radio" name="gender" value="female" placeholder="female" required>Female</td>
+</tr>
+<tr>
+<td>Enter Email Address</td>
+<td><input type="email" name="email" placeholder="Email Address" required></td>
+</tr>
+<td>Enter Username</td>
+<td><input type="text" name="uname" placeholder="Enter Username" required></td>
+</tr>
+<tr>
+<td>Enter Password</td>
+<td><input type="password" name="pwd" placeholder="Password" required></td>
+</tr>
+<tr>
+<td>Enter Mobile Number</td>
+<td><input type="number" name="id" placeholder="Enter mobile number" required></td>
+</tr>
+<tr>
+<td>Enter Location</td>
+<td><input type="text" name="loc" placeholder="Location" required></td>
+</tr>
+</table>
+<br>
+<center><input type="submit"></center>
+</form>
+{% endblock %}
+</body>
+</html>

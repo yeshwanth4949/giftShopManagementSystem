@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer</title>
+<style type="text/css">
+	a{
+		text-decoration: none;
+	}
+</style>
+</head>
+<body bgcolor="lightblue">
+<center>
+	<h1 align=center bgolor='red'>Gift Shop Management System</h1>
+&nbsp;&nbsp;&nbsp;<a href="{{url_for('index')}}">Home</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('about')}}">About</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('stockmanager')}}">StockManager</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('shopowner')}}">ShopOwner</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('customer')}}">Customer</a>&nbsp;&nbsp;&nbsp;
+<hr>
+
+
+	<ul><h1 style="color: red">Customer Login</h1></ul>
+<form name="f" >
+	<tr>
+		<td>Username:</td>
+		<td>
+<input type="text" name="uname" placeholder="Enter Username"><br><br>
+		</td>
+	</tr>
+	<tr>
+		<td>Password:</td>
+		<td>
+<input type="password" name="pwd" placeholder="Enter Password"><br><br>
+		</td>
+	</tr>
+<input type="submit" placeholder="Submit">
+<br>
+<a href="{{url_for('customer_register')}}">Don't have an account?</a>&nbsp;&nbsp;&nbsp;
+
+</form>
+</center>
+</body>
+</html>
