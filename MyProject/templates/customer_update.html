@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customer Home</title>
+</head>
+<body bgcolor="lightblue">
+<u><h1 align=center bgolor='red'>Gift Shop Management System</h1></u>
+	<center>
+<h2 align=center style="color: red">Customer Home</h2>
+&nbsp;&nbsp;&nbsp;<a href="{{url_for('index')}}">Home</a>&nbsp;&nbsp;&nbsp;
+<a href="">View Orders</a>&nbsp;&nbsp;&nbsp;
+<a href="">Search Products</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('customerupdate')}}">Change Password</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('customer')}}">Logout</a>&nbsp;&nbsp;&nbsp;
+
+<hr>
+<form name="f" method="post" action="updateuser">
+	<center><h2 >Update Password</h2></center>
+	
+<table align="center" >
+<tr>
+		<td>Enter Username:</td>
+		<td>
+<input type="text" name="uname" placeholder="Enter Username"><br><br>
+		</td>
+	</tr>
+<tr>
+<td>Enter New Password:</td>
+<td><input type="text" name="pwd" placeholder="Enter New Password" required></td><br><br>
+</tr>
+</table>
+<center><br><br><input type="submit"></center>
+</form>
+
+</body>
+</html>

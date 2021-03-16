@@ -11,22 +11,27 @@
 		text-decoration: none;
 		font-size: 25px;
 	}
+	img
+	{
+		width: 500px;
+		
+	}
 </style>
 </head>
 <body bgcolor="lightblue">
 	
 	<h1 align=center bgolor='red'>Gift Shop Management System</h1>
 	<center>
-{%  block block1 %}
+
 &nbsp;&nbsp;&nbsp;<a href="{{url_for('index')}}">Home</a>&nbsp;&nbsp;&nbsp;
 <a href="{{url_for('about')}}">About</a>&nbsp;&nbsp;&nbsp;
 <a href="{{url_for('stockmanager')}}">StockManager</a>&nbsp;&nbsp;&nbsp;
 <a href="{{url_for('shopowner')}}">ShopOwner</a>&nbsp;&nbsp;&nbsp;
 <a href="{{url_for('customer')}}">Customer</a>&nbsp;&nbsp;&nbsp;
 	<hr>
-{%  endblock %}
+<img src="static/images/asdf.jfif">
 </center>
-{% block block2 %}
-{%  endblock %}
+
+
 </body>
 </html>

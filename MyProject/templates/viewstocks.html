@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View Stocks</title>
+<style type="text/css">
+
+table {
+  border-collapse: collapse;
+}
+
+</style>
+</head>
+<body bgcolor="lightblue">
+	
+	<h1 align=center bgolor='red'>Stocks</h1>
+	<center>
+
+<br>
+<br>
+<h3 align="center"><u>View Stocks</u></h3><br><br>
+
+<table align="center" border="2">
+<tr>
+<th>Id</th>
+<th>Gift Category</th>
+<th>Gift Name</th>
+<th>Gift Description</th>
+<th>Cost</th>
+<th>Quantity</th>
+
+</tr>
+
+{% for row in rows %}
+<tr>
+<td>{{row[0]}}</td>
+<td>{{row[1]}}</td>
+<td>{{row[2]}}</td>
+<td>{{row[3]}}</td>
+<td>{{row[4]}}</td>
+<td>{{row[5]}}</td>
+</tr>
+{% endfor %}
+
+
+</table>
+
+
+
+
+</center>
+
+
+</body>
+</html>

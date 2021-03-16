@@ -17,13 +17,18 @@
 </head>
 <body bgcolor='cyan'>
 	<center>
+<h1 align=center bgolor='red'>Gift Shop Management System</h1>
 	
-{% extends 'index.html' %}
-</center>
-{% block block2 %}
+
+&nbsp;&nbsp;&nbsp;<a href="{{url_for('index')}}">Home</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('about')}}">About</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('stockmanager')}}">StockManager</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('shopowner')}}">ShopOwner</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('customer')}}">Customer</a>&nbsp;&nbsp;&nbsp;
+	<hr>
 
 	
-<form name="f" method="post" action="insert.jsp">
+<form name="f" method="post" action="insertusers">
 	<center><h2 >Customer Registration</h2></center>
 <table align="center" width=400 height=300>
 <td>Enter Full Name</td>
@@ -46,7 +51,7 @@
 </tr>
 <tr>
 <td>Enter Mobile Number</td>
-<td><input type="number" name="id" placeholder="Enter mobile number" required></td>
+<td><input type="number" name="mobile" placeholder="Enter mobile number" required></td>
 </tr>
 <tr>
 <td>Enter Location</td>
@@ -56,6 +61,6 @@
 <br>
 <center><input type="submit"></center>
 </form>
-{% endblock %}
+
 </body>
 </html>

@@ -9,7 +9,7 @@
 	}
 </style>
 </head>
-<body bgcolor="cyan">
+<body bgcolor="lightblue">
 <center>
 	<h1 align=center bgolor='red'>Gift Shop Management System</h1>
 &nbsp;&nbsp;&nbsp;<a href="{{url_for('index')}}">Home</a>&nbsp;&nbsp;&nbsp;
@@ -19,10 +19,8 @@
 <a href="{{url_for('customer')}}">Customer</a>&nbsp;&nbsp;&nbsp;
 
 <hr>
-
-
 	<ul><h1 style="color: red">Stock Manager Login</h1></ul>
-<form name="f" >
+<form name="f" method="post" action="checkusers_sm">
 	<tr>
 		<td>Username:</td>
 		<td>
