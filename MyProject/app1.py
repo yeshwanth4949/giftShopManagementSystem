@@ -24,6 +24,11 @@ def register():
 def about():
   return render_template('about.html')
 
+@app.route("/requestforstock")
+def requestforstock():
+  return render_template('requestforstock.html')
+
+
 @app.route("/stockmanager")
 def stockmanager():
   return render_template('stockManagerLogin.html')
@@ -65,9 +70,9 @@ def shopownerupdate():
 def customerupdate():
   return render_template('/customer_update.html')
 
-@app.route("/shopmanagerupdate")
+@app.route("/stockmanagerupdate")
 def shopmanagerupdate():
-  return render_template('/shopManager_update.html')
+  return render_template('/stockManager_update.html')
 
 @app.route("/adduser")
 def adduser():
@@ -76,7 +81,6 @@ def adduser():
 @app.route("/addstock")
 def addstock():
   return render_template('/addstock.html')
-
 
 @app.route("/deleteuser")
 def deleteuser():
@@ -160,17 +164,13 @@ def checkusers_sm():
     try:
       uname=request.form["uname"]
       pwd=request.form["pwd"]
-      print(uname,pwd)
       db_cursor = mysql.connection.cursor()
       db_cursor.execute("select * from register_sm where uname=%s and pwd=%s ", [uname,pwd])
       n=db_cursor.fetchall()
       if(len(n)>0):
-        return render_template("shopOwner_home.html")
-      else:
-        return render_template("stockManagerLogin.html",message="Fail to login")
+        return render_template("stockManager_home.html",message="Login Successfully")
     except Exception as e:
-      
-      return e
+      return "Invalid Login"
 
 @app.route("/insertstock",methods=["POST","GET"])
 def insertstock():
@@ -192,12 +192,47 @@ def insertstock():
       #msg="Fail to Add User Record"
       return render_template("display.html",message="Fail to Add User Record")#message = param name and msg = param value
 
+
+
+@app.route("/requeststock",methods=["POST","GET"])
+def requeststock():
+  if request.method=="POST":
+    try:
+      gift_category=request.form["gift_category"]
+      gift_name=request.form["gift_name"]
+      gift_desc=request.form["gift_desc"]
+      cost=request.form["cost"]
+      quantity=request.form["quantity"]
+      status="not_accepted"
+      print(gift_category,gift_name,gift_desc,cost,quantity,status)
+      db_cursor = mysql.connection.cursor()
+      db_cursor.execute("INSERT INTO stocks(gift_category,gift_name,gift_desc,cost,quantity,status) VALUES (%s,%s,%s,%s,%s,%s)", [gift_category,gift_name,gift_desc,cost,quantity,status])
+      mysql.connection.commit()
+      #msg="User Added Successfully"
+      return render_template("display.html",message="User Added Successfully")#message = param name and msg = param value
+    except Exception as e:
+      print(e)
+      #msg="Fail to Add User Record"
+      return render_template("display.html",message="Fail to Add User Record")#message = param name and msg = param value
+
+
+
+
 @app.route("/viewstocks")
 def viewstocks():
     db_cursor = mysql.connection.cursor()
-    db_cursor.execute("select * from stocks")
+    db_cursor.execute("select * from stocks where status='accepted'")
     rows = db_cursor.fetchall()
     return render_template("viewstocks.html",rows=rows)
+
+@app.route("/viewrequests")
+def viewrequests():
+  db_cursor = mysql.connection.cursor()
+  db_cursor.execute("select * from stocks where status='not_accepted'")
+  rows = db_cursor.fetchall()
+  return render_template("viewrequests.html",rows=rows)
+
+
 
 @app.route("/updateuser",methods=["POST","GET"])
 def updateuser():
@@ -251,6 +286,15 @@ def updateuser2():
       print(e)
       return e
 
+@app.route("/updatereq/<string:sid>")
+def updatereq(sid):
+  try:
+    db_cursor = mysql.connection.cursor()
+    db_cursor.execute("update stocks set status=%s where id=%s", ["accepted",sid])
+    mysql.connection.commit()
+    return "Stock Added Successfully"
+  except Exception as e:
+      return e
 
 
 if __name__ == '__main__':

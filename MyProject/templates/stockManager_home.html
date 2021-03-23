@@ -8,15 +8,14 @@
 	<center>
 <h2 align=center style="color: red">Stock Manager Home</h2>
 &nbsp;&nbsp;&nbsp;<a href="{{url_for('index')}}">Home</a>&nbsp;&nbsp;&nbsp;
-<a href="">Add Stock</a>&nbsp;&nbsp;&nbsp;
-<a href="">View Stock</a>&nbsp;&nbsp;&nbsp;
-<a href="">View Request</a>&nbsp;&nbsp;&nbsp;
-<a href="{{url_for('shopManager_update')}}">Change Password</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('addstock')}}">Add Stock</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('viewstocks')}}">View Stock</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('viewrequests')}}">View Request</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('stockmanagerupdate')}}">Change Password</a>&nbsp;&nbsp;&nbsp;
 <a href="{{url_for('stockmanager')}}">Logout</a>&nbsp;&nbsp;&nbsp;
 
-<h1>Hi</h1>
 <hr>
-
+{{message}}
 </center>
 </body>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Request for Stock</title>
+<style type="text/css">
+	
+	h2
+	{
+		color: red;
+	}
+
+
+</style>
+</head>
+<body bgcolor='cyan'>
+	<center>
+<h1 align=center bgolor='red'>Gift Shop Management System</h1>
+	
+
+&nbsp;&nbsp;&nbsp;<a href="{{url_for('index')}}">Home</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('about')}}">About</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('stockmanager')}}">StockManager</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('shopowner')}}">ShopOwner</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('customer')}}">Customer</a>&nbsp;&nbsp;&nbsp;
+	<hr>
+
+	
+<form name="f" method="post" action="requeststock">
+	<center><h2 >Request Stock</h2></center>
+	<a href="{{url_for('viewstocks')}}">View Stocks</a>&nbsp;&nbsp;&nbsp;
+<table align="center" width=400 height=300>
+<tr>
+<td>Enter Gift Category</td>
+<td><input type="text" name="gift_category" placeholder="Enter Gift Category" required></td>
+</tr>
+<tr>
+<td>Enter Gift Name</td>
+<td><input type="text" name="gift_name" placeholder="Enter Gift Name" required></td>
+</tr>
+<tr>
+<td>Enter Gift Description</td>
+<td><input type="text" name="gift_desc" placeholder="Enter Gift Description" required></td>
+</tr>
+<tr>
+<td>Enter Cost</td>
+<td><input type="number" name="cost" placeholder="Enter Cost" required></td>
+</tr>
+<tr>
+<td>Enter Quantity</td>
+<td><input type="number" name="quantity" placeholder="Enter Quantity" required></td>
+</tr>
+</table>
+<br>
+<center><input type="submit"></center>
+</form>
+
+</body>
+</html>
