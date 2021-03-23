@@ -15,7 +15,13 @@ table {
 	
 	<h1 align=center bgolor='red'>Stocks</h1>
 	<center>
-
+&nbsp;&nbsp;&nbsp;<a href="{{url_for('index')}}">Home</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('addstock')}}">Add Stock</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('viewstocks')}}">View Stock</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('viewrequests')}}">View Request</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('stockmanagerupdate')}}">Change Password</a>&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('stockmanager')}}">Logout</a>&nbsp;&nbsp;&nbsp;
+	
 <br>
 <br>
 <h3 align="center"><u>View Requests</u></h3><br><br>
@@ -40,7 +46,7 @@ table {
 <td>{{row[3]}}</td>
 <td>{{row[4]}}</td>
 <td>{{row[5]}}</td>
-<td><a href="">Accept</a></td>
+<td><a href="updatereq/{{row[0]}}">Accept</a></td>
 </tr>
 {% endfor %}
 
